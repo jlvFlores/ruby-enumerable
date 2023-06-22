@@ -3,14 +3,14 @@
 # Declaring our module that holds our enumerable methods
 module MyEnumerable
   def all?(&block)
-    for item in @list
+    @list.each do |item|
       return false unless block.call(item)
     end
     true
   end
 
   def any?(&block)
-    for item in @list
+    @list.each do |item|
       return true if block.call(item)
     end
     false
@@ -18,7 +18,7 @@ module MyEnumerable
 
   def filter(&block)
     array = []
-    for item in @list
+    @list.each do |item|
       array << item if block.call(item)
     end
     array
