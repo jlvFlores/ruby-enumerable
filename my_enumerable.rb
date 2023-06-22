@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Declaring our module that holds our enumerable methods
 module MyEnumerable
   def all?(&block)

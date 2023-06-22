@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative 'my_enumerable'
 
 # Declaring our list class
@@ -22,7 +20,7 @@ list = MyList.new(1, 2, 3, 4)
 # => #<MyList: @list=[1, 2, 3, 4]>
 
 # Test each
-list.each { |e| puts e }
+# list.each { |e| puts e }
 # => 1234
 
 # # Test #all?
