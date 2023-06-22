@@ -4,9 +4,9 @@ require_relative 'my_enumerable'
 class MyList
   include MyEnumerable
 
-  def each
+  def each(&block)
     @list.each do |item|
-      yield item
+      block.call(item)
     end
   end
 
