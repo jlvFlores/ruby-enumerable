@@ -7,7 +7,7 @@ class MyList
   include MyEnumerable
 
   def each
-    for item in @list
+    @list.each do |item|
       yield item
     end
   end
@@ -23,21 +23,20 @@ list = MyList.new(1, 2, 3, 4)
 
 # Test each
 list.each { |e| puts e }
-puts ''
 # => 1234
 
 # # Test #all?
-puts list.all? {|e| e < 5}
+list.all? { |e| e < 5 }
 # # => true
-puts list.all? {|e| e > 5}
+list.all? { |e| e > 5 }
 # # => false
 
 # # Test #any?
-puts list.any? {|e| e == 2}
+list.any? { |e| e == 2 }
 # # => true
-puts list.any? {|e| e == 5}
+list.any? { |e| e == 5 }
 # # => false
 
 # # Test #filter
-print list.filter {|e| e.even?}
+# list.filter { |e| e.even? }
 # # => [2, 4]
